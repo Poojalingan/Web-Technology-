@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form>
+            <fieldset>
+                <h3 id="Submit Your Resume">Submit Your Resume</h3>
+                <fieldset>
+                    <legend>Personal Details</legend>
+                    <label>First Name: </label>
+                    <input type="text" id="First Name" name="First Name" placeholder="Enter your first name">
+                    <br><br>
+                    <label>Middle Name: </label>
+                    <input type="text" id="Middle Name" name="Middle Name" placeholder="Enter your Middle name">
+                    <br><br>
+                    <label>Last Name: </label>
+                    <input type="text" id="Last Name" name="Last Name" placeholder="Enter your Last name">
+                    <br><br>
+                    <label>Date of Birth: </label>
+                    <input type="date" id="Date" name="Date">
+                    <br><br>
+                    <label>Age in Years: </label>
+                    <input type="text" id="Age" name="Age">
+                </fieldset>
+    <br>
+    <progress value="20" max="100"></progress> 20% out of 100%
+    <br>
+    <fieldset>
+        <legend>Address Details</legend>
+        <label>Address: </label>
+        <textarea rows="3" cols="50"></textarea>
+        <br><br>
+        <label>City/Town: </label>
+        <input type="text">
+        <br><br>
+        <label>State: </label>
+        <input type="text">
+        <br><br>
+        <label>Zip Code: </label>
+        <input type="txt" placeholder="only 6 numbers">
+    </fieldset>
+    <br>
+    <progress value="40" max="100"></progress> 40% out of 100%
+    <br>
+    <fieldset>
+        <legend>Contact Information</legend>
+        <label>Telephone: </label>
+        <input type="tel" placeholder="(004)999-9999">
+        <br><br>
+        <label>Mobile: </label>
+        <input type="tel" placeholder="(+91)99999-99999">
+        <br><br>
+        <label>Email: </label>
+        <input type="email" placeholder="valid email">
+        <br><br>
+        <label>Website: </label>
+        <input type="url" placeholder="valid url">
+    </fieldset>
+    <fieldset>
+        <legend>Educational Details</legend>
+            <br>
+            <table border="1">
+                <thead>
+                    <th>Qualification</th>
+                    <th>Board/University</th>
+                    <th>Country</th>
+                    <th>Starting Year</th>
+                    <th>Ending Year</th>
+                    <th>Percentage</th>
+                </thead>
+                <tr>
+                    <td><input type="checkbox">10th</td>
+                    <td><input type="text"></td>
+                    <td><select name="country"> <option value="india">India</option></select></td>
+                    <td><input type="date"></td>
+                    <td><input type="date"></td>
+                    <td><input type="number" min="0" max="100"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox">12th</td>
+                    <td><input type="text"></td>
+                    <td><select name="country">
+                        <option value="india">India</option>
+                    </select></td>
+                    <td><input type="date"></td>
+                    <td><input type="date"></td>
+                    <td><input type="number" min="0" max="100"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox">Btech</td>
+                    <td><input type="text"></td>
+                    <td><select name="country">
+                        <option value="india">India</option>
+                    </select></td>
+                    <td><input type="date"></td>
+                    <td><input type="date"></td>
+                    <td><input type="number" min="0" max="100"></td>
+                </tr>
+            </table>
+        </fieldset>
+    <br>
+    <progress value="80" max="100"></progress> 80% out of 100%
+    <br>
+    <label>Attach your resume in .doc or .pdf format </label>
+    <input type="file" id="Choose File">
+    <br>
+    <input type="checkbox" id="id1" name="id1" value="id1">
+    <label for="id1">I filled all the details</label><br><br>
+    <progress value="100" max="100"></progress> 100% out of 100%
+    <br><br>
+    <center><input type="submit" id="submit" name="submit" value="Submit" required></center>
+    </fieldset>
+</form>
+</body>
+</html>
