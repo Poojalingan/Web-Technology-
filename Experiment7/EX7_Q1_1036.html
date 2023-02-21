@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script> 
+        $(document).ready(function(){
+            $('#btn1').click(function(){
+                let tot =parseInt($('#num').val());
+                let num1 =parseInt($('#rr').val());
+                let num2 =parseInt($('#accss').val());
+                let num3 =parseInt($('#em').val());
+                let num4 =parseInt($('#sav').val());
+
+                let r1 = tot * num1/100;
+                $('.d1').html("Room Rent "+r1);
+               
+                let r2 = tot * num2/100;
+                $('.d2').html("Accessories "+r2);
+              
+                let r3 = tot * num3/100;
+                $('.d3').html("Emergencies "+r3);
+              
+                let r4 = tot * num4/100;
+                $('.d4').html("Savings "+r4)
+
+                let r5 = tot - r1+r2+r3+r4;
+                $('.d5').val("Balance "+r5)
+
+                // r5=r1+r2+r3+r4;
+                // if(r5>100){
+                    // r6=tot-r5;
+                    // alert("balance"+ r6);
+                // }
+
+                num5=num1+num2+num3+num4;
+                if(num5>100){
+                    alert("Total is more than 100");
+                }
+
+            })
+        })
+        
+        </script>
+    </head>
+    <body style="background-color:rgb(122, 177, 194);">
+        <div style=" background-color: black;
+                     color:white;
+                     font-size:30px;
+                     text-align:center;">
+            Budget Calculator App</div>
+            <br>
+                <p style="font-size: 25px; text-align: center;"><b>  Enter Amount that you want to Manage</b></p>
+            
+                <input type="number" id="num" style="margin-left:42%;text-align: center;height:40px" placeholder="Enter Amount"><br>
+                
+                <p style="font-size:20px; text-align:center"><b>How Would You Like To Divide Your Money?</b></p><br>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label for="Room Rent(%)" name="Room Rent" > <b> Room Rent(%) </b></label>
+                <input type="number" id="rr" name="Room Rent" placeholder="Enter Amount" style="text-align: center;height:40px"> &nbsp;&nbsp;&nbsp;
+
+                <label for="Accessories(%)" name="Accessories"> <b> Accessories(%)</b></label>
+                <input type="number" id="accss" name="Accessories" placeholder="Enter Amount" style="text-align: center;height:40px"> &nbsp;&nbsp;&nbsp;
+
+                <label for="Emergency(%)" name="Emergency"> <b> Emergency(%) </b></label>
+                <input type="number" id="em" name="Emergency" placeholder="Enter Amount" style="text-align: center;height:40px"> &nbsp;&nbsp;&nbsp;
+
+                <label for="Savings(%)" name="Savings"> <b> Savings(%) </b></label>
+                <input type="number" id="sav" name="Savings" placeholder="Enter Amount" style="text-align: center;height:40px">
+                 
+                <br> <br> <br>
+
+                <button id="btn1" style="background-color: blue; color: white; margin-left:42%;text-align: center;height:40px"> Evaluate My Money </button>
+               
+                <br><br><br>
+            <div id="box" style="margin-left:5%">
+
+            <div class="d1"style="margin-left: 15%;float: left;;width:100px;height:70px;border:1px solid blue; background-color:skyblue;color:white;text-align:center"> </div>
+            <div class="d2"style="margin-left: 10%;float: left;width:100px;height:70px;border:1px solid green; background-color:green;color:white;text-align:center"></div>
+            <div class="d3"style="margin-left: 10%;float: left;width:100px;height:70px;border:1px solid yellow; background-color:yellow;color:black;text-align:center"></div>
+            
+            <div class="d4"style="margin-left: 10%;float: left;width: 100px;height:70px;border:1px solid pink; background-color:pink;color:black;text-align:center"></div>
+            </div>
+
+
+    </body>
+</html>

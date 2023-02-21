@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  //hide,show,toggle
+  $("#hide").click(function(){
+    $("p").hide();
+  });
+  $("#show").click(function(){
+    $("p").show();
+  });
+  $("#toggle").click(function(){
+    $("p").toggle();
+  });
+  //fadeIn, fadeOut, fadeToggle
+  $("#fadeIn").click(function(){
+    $("#div1").fadeIn();
+    $("#div2").fadeIn("slow");
+    $("#div3").fadeIn(3000);
+  });
+  $("#fadeOut").click(function(){
+    $("#div1").fadeOut();
+    $("#div2").fadeOut("slow");
+    $("#div3").fadeOut(3000);
+  });
+  $("#fadeToggle").click(function(){
+    $("#div1").fadeToggle();
+    $("#div2").fadeToggle("slow");
+    $("#div3").fadeToggle(3000);
+  });
+  //slideIn, slideOut, slideToggle
+  $("#slideIn").click(function(){
+    $("#textdis").slideDown("slow");
+  });
+  $("#slideOut").click(function(){
+    $("#texthid").slideUp("slow");
+  });
+  $("#slideToggle").click(function(){
+    $("#textboth").slideToggle("slow");
+  });
+  //animate
+  $("#animate").click(function(){
+    var div = $("#animate1");
+    div.animate({height: '300px', opacity: '0.4'}, "slow");
+    div.animate({width: '400px', opacity: '0.8'}, "slow");
+    div.animate({height: '100px', opacity: '0.4'}, "slow");
+    div.animate({width: '400px', opacity: '0.8'}, "slow");
+  });
+});
+</script>
+<style> 
+*{
+    background-color: rgb(147, 247, 247);
+}
+#textdis, #slideIn {
+  padding: 5px;
+  text-align: center;
+  background-color:azure;
+  color: black;
+  border: solid 1px #c3c3c3;
+}
+
+#textdis{
+  padding: 50px;
+  display: none;
+}
+
+#texthid, #slideOut {
+  padding: 5px;
+  text-align: center;
+  background-color: azure;
+  color: black;
+  border: solid 1px #c3c3c3;
+}
+#texthid{
+  padding: 50px;
+}
+
+#textboth, #slideToggle {
+  padding: 5px;
+  text-align: center;
+  background-color:azure;
+  color: black;
+  border: solid 1px #c3c3c3;
+}
+
+#textboth {
+  padding: 50px;
+  display: none;
+}
+</style>
+
+</head>
+<body>
+<!-- Hide, Show, Toggle -->
+<p>Hide Effect Demonstartion (Click Hide Button to hide, Show button to display)</p>
+<br>
+<button id="hide" style="background-color: black;color: white;">Hide</button> 
+<button id="show" style="background-color: black;color: white;">Show</button>
+<button id="toggle" style="background-color: black;color: white;">Toggle</button>
+
+<!-- fadeIn, fadeOut, fadeToggle -->
+<div id="div1" style="display:none;color:red;"> fade effect in Red Color Text </div> <br>
+<div id="div2" style="display:none;color:green;"> fade effect innGreen  Color Text </div><br>
+<div id="div3" style="display:none;color:blue;"> fade effect in Blue Color Text</div> <br> 
+<br> <br>
+<button id ="fadeIn" style="background-color: black;color: white;">Click to fade in text</button>
+<button id ="fadeOut" style="background-color: black;color: white;">Click to fade out text</button> 
+<button id="fadeToggle" style="background-color: black;color: white;">Click to fade toggle text</button>
+<br><br>
+
+<!-- slideIn, slideOut, slideToggle -->
+<div id="slideIn">Click for SlideDown Demonstration</div>
+<div id="textdis">SlideIn</div>
+<br>
+<div id="slideOut">Click for SlideUp Demonstration</div> 
+<div id="texthid">SlideOut</div>
+<br>
+<div id="slideToggle">Click for SlideToggle Demonstration</div> 
+<div id="textboth">SlideToggle</div>
+<br> 
+
+<!-- animate -->
+<button id="animate" style="background-color: black;color: white;">Start Animation</button> 
+<br> <br> <br>
+<div id="animate1" style="background-color: rgb(112, 198, 231); color:white;height: 100px;width:100px;position:absolute;"> Animation of a Box</div>
+<br>  
+
+</body>
+</html>
