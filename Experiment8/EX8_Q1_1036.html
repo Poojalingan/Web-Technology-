@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Angular JS</title>
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", function ($scope) { 
+            $scope.calculate = function(){ 
+                $scope.nameRes = $scope.name;
+                $scope.empIDRes = $scope.empid;
+                $scope.dateRes = $scope.date.toLocaleDateString('en-US');
+                $scope.grossRes = parseInt($scope.salary) + parseInt($scope.hra) + parseInt($scope.da);
+
+                if (parseInt($scope.grossRes) >= 20000 & parseInt($scope.grossRes) < 40000){
+                    var tax = (parseInt($scope.grossRes) / 100 ) * 5 ;
+                }
+                else if (parseInt($scope.grossRes) >= 40000 & parseInt($scope.grossRes) < 60000){
+                    var tax = (parseInt($scope.grossRes) / 100 ) * 10 ;
+                }
+                else if (parseInt($scope.grossRes) >= 60000){
+                    var tax = (parseInt($scope.grossRes) / 100 ) * 15 ;
+                }
+
+                $scope.taxRes = tax;
+                $scope.netRes = parseInt($scope.grossRes) - parseInt($scope.taxRes);
+            }
+        });
+    </script>
+    <form  class="p-5">
+        <center>
+            <h2 class="text-danger">Employee Payroll Calculator</h2>
+        </center>
+        <div class="mb-3 mt-3">
+            <label for="name" class="form-label text-primary ">Employee Name:</label>
+            <input type="text" class="form-control border-dark text-danger" id="name" name="name" ng-model="name"/>
+        </div>
+        <div class="mb-3">
+            <label for="empID" class="form-label text-primary">Emp ID:</label>
+            <input type="text" class="form-control border-dark text-danger" id="empID" name="empID" ng-model="empid"/>
+        </div>
+        <div class="mb-3">
+            <label for="empID" class="form-label text-primary">Salary Date:</label>
+            <input type="date" class="form-control border-dark text-danger" id="saldate" name="saldate" ng-model="date"/>
+        </div>
+        <div class="mb-3">
+            <label for="empID" class="form-label text-primary">Basic Salary:</label>
+            <input type="text" class="form-control border-dark text-danger" id="bsal" name="bsal" ng-model="salary"/>
+        </div>
+        <div class="mb-3">
+            <label for="empID" class="form-label text-primary">House Rent Allowance(HRA):</label>
+            <input type="text" class="form-control border-dark text-danger" id="HRA" name="HRA" ng-model="hra"/>
+        </div>
+        <div class="mb-3">
+            <label for="empID" class="form-label text-primary">Dearness Allowance(DA):</label>
+            <input type="text" class="form-control border-dark text-danger" id="DA" name="DA" ng-model="da"/>
+        </div>
+        <center><button ng-click="calculate()" type="submit" class="btn btn-primary">Calculate Salary</button></center>
+    </form>
+    <div>
+        <center><h1 class="">Salary Details</h1></center>
+        <center>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><p class="bg-primary text-light p-3 text-center">Employee Name</p></td>
+                        <td><p class="text-danger" ng-bind="nameRes"></p></td>
+                    </tr>
+                    <tr>
+                        <td><p class="bg-primary text-light p-3 text-center">Emp.ID</p></td>
+                        <td><p class="text-danger" ng-bind="empIDRes"></p></td>
+                    </tr>
+                    <tr>
+                        <td><p class="bg-primary text-light p-3 text-center">Salary Date</p></td>
+                        <td><p class="text-danger" ng-bind="dateRes">Employee Name</p></td>
+                    </tr>
+                    <tr>
+                        <td><p class="bg-primary text-light p-3 text-center">Gross Salary</p></td>
+                        <td><p class="text-danger" ng-bind="grossRes">Employee Name</p></td>
+                    </tr>
+                    <tr>
+                        <td><p class="bg-primary text-light p-3 text-center">Net Salary</p></td>
+                        <td><p class="text-danger" ng-bind="netRes">Employee Name</p></td>
+                    </tr>
+                    <tr>
+                        <td><p class="bg-primary text-light p-3 text-center">Tax Detection</p></td>
+                        <td><p class="text-danger" ng-bind="taxRes">Employee Name</p></td>
+                    </tr>
+                </body>
+            </table>
+        </center>
+    </div>
+</body>
+</html>
